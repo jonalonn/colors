@@ -1,10 +1,11 @@
+$( document ).ready(function() {
 var c=document.getElementById("colorGrid");
 	var ctx=c.getContext("2d");
 	var leftMargin = 0;
 	var topMargin = 0;
 	var colors = ["red", "blue", "green", "yellow", "orange", "brown", "purple", "pink", "grey", "black"]
-	var cellHeight = 4;
-	var cellWidth = 4;
+	var cellHeight = 2;
+	var cellWidth = 2;
 	var windowHeight = window.innerHeight;
 	var windowWidth = window.innerWidth;
 	var rowEnd = windowWidth;
@@ -30,10 +31,20 @@ function drawNumber(fileName) {
     }
 }
 
-$( document ).ready(function() {
+
   $('.numButton').click(function() {
-  	// console.log('')
+  	var num1 = $('.num1').val()
+  	var num2 = $('.num2').val()
+  	var num3 = $('.num3').val()
+  	var num4 = $('.num4').val()
+  	var num5 = $('.num5').val()
+  	var num6 = $('.num6').val()
+  	var num7 = $('.num7').val()
+  	var num8 = $('.num8').val()
+  	var num9 = $('.num9').val()
+  	var num0 = $('.num0').val()
   	var fileName = $(this).val();
+  	colors = [num1, num2, num3, num4, num5, num6, num7, num8, num9, num0]
   	$('#inputDiv').hide();
   	drawNumber(fileName);
   })
