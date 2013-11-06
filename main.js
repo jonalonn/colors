@@ -20,8 +20,6 @@ function randomColor() {
 	colors=[]
 }
 
-randomColor();
-
 function drawNumber(fileName) {
 	var request = new XMLHttpRequest();
 	request.open("GET", fileName + '.txt', false);
@@ -41,6 +39,7 @@ function drawNumber(fileName) {
         ctx.fillRect(leftMargin, topMargin, cellWidth, cellHeight);
     }
     $('#reloadButton').show();
+    img = c.toDataURL("image/png");
 }
 $('#reloadButton').hide();
 $('.restart').click(function() {
@@ -59,3 +58,12 @@ $('.numButton').click(function() {
 	$('#inputDiv').hide();
 	drawNumber(fileName);
 })
+
+$('.saveImage').click(function() {
+	document.write('<img src="'+img+'"/>');
+})
+
+$('.randomCol').click(function() {
+	randomColor();
+})
+
