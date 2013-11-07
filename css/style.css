@@ -1,0 +1,42 @@
+.container {
+	width: 314px;
+	background-color: rgba(0,255,255,0.7) !important;
+	margin-left: 30% !important;
+	height: 314px;
+	margin-right: auto !important;
+	margin-top: 5% !important;
+	color: #ffffff;
+	border-radius: 5px;
+	padding: 10px 10px 10px 10px;
+	border: 2px solid white;
+}
+
+.numButton {
+	width: 157px;
+	background-color: rgba();
+}
+
+input {
+    border: 2px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,255,255,0.1) !important,
+            0 0 8px rgba(0,255,255,0.1) !important; 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,255,255,0.1)!important,
+            0 0 8px rgba(0,255,255,0.1)!important; 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,255,255,0.1)!important,
+            0 0 8px rgba(0,255,255,0.1)!important; 
+    padding: 1px;
+    background: rgba(0,255,255,0.1)!important;
+    margin: 0 0 1px 0;
+}
+
+.color {
+color: #FFFFFF!important;
+text-shadow: 1px #000000;
+}
+
+.num1 {
+	color: red;
+}
