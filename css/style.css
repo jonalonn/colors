@@ -1,13 +1,13 @@
-.container {
-	width: 414px;
+.container {	
 	background-color: rgba(0,0,0,0.5) !important;
-	margin-left: 20% !important;
+	width: 414px;
 	height: 514px;
+	margin-left: auto !important;
 	margin-right: auto !important;
 	margin-top: 3% !important;
+	padding: 10px 10px 10px 10px;
 	color: #ffffff;
 	border-radius: 5px;
-	padding: 10px 10px 10px 10px;
 	border: 2px solid white;
 }
 
