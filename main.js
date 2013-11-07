@@ -60,10 +60,13 @@ $('.numButton').click(function() {
 })
 
 $('.saveImage').click(function() {
-	document.write('<img src="'+img+'"/>');
+	$('#colorCanvas').hide();
+	$('.imageSave').append('<img src="'+img+'"/>');
+	$('.saveImage').hide();
 })
 
 $('.randomCol').click(function() {
 	randomColor();
+	jscolor.fireEvent
 })
 
