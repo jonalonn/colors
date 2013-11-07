@@ -1,3 +1,9 @@
+body {
+	background-image:url('img/3.jpg');
+	background-repeat:repeat;
+	background-attachment:fixed;
+}
+
 img {
 	margin:0;
 }
