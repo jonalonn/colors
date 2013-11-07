@@ -1,3 +1,20 @@
+img {
+	margin:0;
+}
+
+#logoDiv {
+	width:340px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+#inputDiv {
+	width:340px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
 .container {
 	width: 414px;
 	background-color: rgba(0,0,0,0.5) !important;
@@ -17,24 +34,24 @@
 }
 
 input {
-    border: 2px solid white; 
-    -webkit-box-shadow: 
-      inset 0 0 8px  rgba(255,255,255,0.1) !important,
-            0 0 8px rgba(255,255,255,0.1) !important; 
-    -moz-box-shadow: 
-      inset 0 0 8px  rgba(255,255,255,0.1)!important,
-            0 0 8px rgba(255,255,255,0.1)!important; 
-    box-shadow: 
-      inset 0 0 8px  rgba(255,255,255,0.1)!important,
-            0 0 8px rgba(255,255,255,0.1)!important; 
-    padding: 1px;
-    background: rgba(255,255,255,0.1)!important;
-    margin: 0 0 1px 0;
+	border: 2px solid white; 
+	-webkit-box-shadow: 
+	inset 0 0 8px  rgba(255,255,255,0.1) !important,
+	0 0 8px rgba(255,255,255,0.1) !important; 
+	-moz-box-shadow: 
+	inset 0 0 8px  rgba(255,255,255,0.1)!important,
+	0 0 8px rgba(255,255,255,0.1)!important; 
+	box-shadow: 
+	inset 0 0 8px  rgba(255,255,255,0.1)!important,
+	0 0 8px rgba(255,255,255,0.1)!important; 
+	padding: 1px;
+	background: rgba(255,255,255,0.1)!important;
+	margin: 0 0 1px 0;
 }
 
 .color {
-color: #FFFFFF!important;
-text-shadow: 1px #000000;
+	color: #FFFFFF!important;
+	text-shadow: 1px #000000;
 }
 
 .num1 {
