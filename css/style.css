@@ -1,7 +1,7 @@
 .container {
 	width: 414px;
 	background-color: rgba(0,0,0,0.5) !important;
-	margin-left: 20% !important;
+	margin-left: auto !important;
 	height: 514px;
 	margin-right: auto !important;
 	margin-top: 3% !important;
