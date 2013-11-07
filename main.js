@@ -21,11 +21,11 @@ x: [10, 20, 30, 0, 40, 0, 40, 0, 10, 20, 30, 70, 80, 90, 60, 100, 60, 100, 60, 1
 y: [0, 0, 0, 10, 10, 20, 30, 30, 40, 40, 40, 0, 0, 0, 10, 10, 20, 20, 30, 30, 40, 40, 40, 0, 10, 20, 30, 40, 40, 40, 40, 0, 0, 0, 10, 10, 20, 20, 30, 30, 40, 40, 40, 0, 0, 0, 0, 10, 10, 20, 20, 20, 20, 30, 30, 40, 40, 0, 0, 0, 0, 10, 20, 20, 20, 30, 40, 40, 40, 40]}
 
 
-window.addEventListener("resize", function() {
-   colorCanvas.width = window.innerWidth;
-   colorCanvas.height = window.innerHeight;
-   drawNumber(digits);
-});
+// window.addEventListener("resize", function() {
+//    colorCanvas.width = window.innerWidth;
+//    colorCanvas.height = window.innerHeight;
+//    drawNumber(digits);
+// });
 
 //Functions
 
