@@ -5,8 +5,8 @@ var topMargin = 0;
 var colors = []
 var cellHeight = 2;
 var cellWidth = 2;
-var logoHeight = 10;
-var logoWidth = 10;
+var logoHeight = 5;
+var logoWidth = 5;
 var windowHeight = window.innerHeight;
 var windowWidth = window.innerWidth;
 var rowEnd = windowWidth;
@@ -14,10 +14,10 @@ colorCanvas.width = windowWidth;
 colorCanvas.height = windowHeight;
 logoCanvas.width = 340;
 logoCanvas.height = 50;
+var int=self.setInterval(function(){drawLogo()},100);
 var colorsArray = {
 x: [10, 20, 30, 0, 40, 0, 40, 0, 10, 20, 30, 70, 80, 90, 60, 100, 60, 100, 60, 100, 70, 80, 90, 120, 120, 120, 120, 120, 130, 140, 150, 180, 190, 200, 170, 210, 170, 210, 170, 210, 180, 190, 200, 230, 240, 250, 260, 230, 270, 230, 240, 250, 260, 230, 270, 230, 270, 300, 310, 320, 330, 290, 300, 310, 320, 330, 290, 300, 310, 320],
 y: [0, 0, 0, 10, 10, 20, 30, 30, 40, 40, 40, 0, 0, 0, 10, 10, 20, 20, 30, 30, 40, 40, 40, 0, 10, 20, 30, 40, 40, 40, 40, 0, 0, 0, 10, 10, 20, 20, 30, 30, 40, 40, 40, 0, 0, 0, 0, 10, 10, 20, 20, 20, 20, 30, 30, 40, 40, 0, 0, 0, 0, 10, 20, 20, 20, 30, 40, 40, 40, 40]}
-
 
 function randomColor() {
 	for (i=0;i<10;i++) {
@@ -40,7 +40,6 @@ function drawLogo() {
 
 
   }
-drawLogo();
 
 function drawNumber(fileName) {
 	var request = new XMLHttpRequest();
@@ -59,7 +58,9 @@ function drawNumber(fileName) {
         ctx.fillStyle=colors[digits[i]];
         ctx.fillRect(leftMargin, topMargin, cellWidth, cellHeight);
     }
+    clearInterval(int);
     $('#reloadButton').show();
+    $('#logoCanvas').hide();
     img = c.toDataURL("image/png");
 }
 $('#reloadButton').hide();
