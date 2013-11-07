@@ -92,7 +92,7 @@ $('.numButton').click(function() {
 	var fileName = $(this).val();
 	cellHeight = pH;
 	cellWidth = pW;
-	$('#inputDiv').hide();
+	$('.container').hide();
 	getFile(fileName);
 })
 
