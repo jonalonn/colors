@@ -14,10 +14,18 @@ colorCanvas.width = windowWidth;
 colorCanvas.height = windowHeight;
 logoCanvas.width = 340;
 logoCanvas.height = 50;
+var digits = []
 var int=self.setInterval(function(){drawLogo()},100);
 var colorsArray = {
 x: [10, 20, 30, 0, 40, 0, 40, 0, 10, 20, 30, 70, 80, 90, 60, 100, 60, 100, 60, 100, 70, 80, 90, 120, 120, 120, 120, 120, 130, 140, 150, 180, 190, 200, 170, 210, 170, 210, 170, 210, 180, 190, 200, 230, 240, 250, 260, 230, 270, 230, 240, 250, 260, 230, 270, 230, 270, 300, 310, 320, 330, 290, 300, 310, 320, 330, 290, 300, 310, 320],
 y: [0, 0, 0, 10, 10, 20, 30, 30, 40, 40, 40, 0, 0, 0, 10, 10, 20, 20, 30, 30, 40, 40, 40, 0, 10, 20, 30, 40, 40, 40, 40, 0, 0, 0, 10, 10, 20, 20, 30, 30, 40, 40, 40, 0, 0, 0, 0, 10, 10, 20, 20, 20, 20, 30, 30, 40, 40, 0, 0, 0, 0, 10, 20, 20, 20, 30, 40, 40, 40, 40]}
+
+
+window.addEventListener("resize", function() {
+   colorCanvas.width = window.innerWidth;
+   colorCanvas.height = window.innerHeight;
+   drawNumber(digits);
+});
 
 //Functions
 
@@ -46,8 +54,7 @@ function getFile(fileName) {
 	request.open("GET", fileName + '.txt', false);
 	request.send(null);
 	var response = request.responseText;
-	var digits = response.toString().split('');
-	console.log(digits)
+	digits = response.toString().split('');
 	drawNumber(digits);
 }
 
@@ -100,7 +107,7 @@ $('.myNum').click(function() {
 	cellWidth = pW;
 	$('#inputDiv').hide();
 	var response = $('.inputNum').val()
-	var digits = response.toString().split('');
+	digits = response.toString().split('');
 	drawNumber(digits);
 })
 
