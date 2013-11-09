@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<title>Colors</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
@@ -19,21 +20,21 @@ ga('send', 'pageview');
 		<div id="logoDiv"><canvas id='logoCanvas'></canvas><br>
 			<center><p>Convert a number to an image</p></center></div>
 			<div id="inputDiv">
-				<button class='numButton' value="pi">PI</button><button class='numButton' value="phi">PHI</button><button class="myNum">my own number</button><br>
-				<input class="inputNum"></input>
-				<p>Color 1<input type="text" class="color num1"></input><br>
-					Color 2<input type="text" class="color num2"></input><br>
-					Color 3<input type="text" class="color num3"></input><br>
-					Color 4<input type="text" class="color num4"></input><br>
-					Color 5<input type="text" class="color num5"></input><br>
-					Color 6<input type="text" class="color num6"></input><br>
-					Color 7<input type="text" class="color num7"></input><br>
-					Color 8<input type="text" class="color num8"></input><br>
-					Color 9<input type="text" class="color num9"></input><br>
-					Color 0<input type="text" class="color num0"></input><br>
-					<button class="randomCol">random colors</button><br>
-					Pixel Width<input type="text" value="2"class="pixWidth"></input><br>
-					Pixel Height<input type="text" value="2"class="pixHeight"></input><br></p>
+				<button class='numButton but' value="pi">PI</button><button class='numButton but' value="phi">PHI</button><br><br>
+				<textarea class="inputNum" cols="50"></textarea><br><br>
+				<button class="myNum but">my own number</button><button class="randomCol but">random colors</button><br><br>
+				<p>Color 1: <input type="text" class="color num1"></input>
+					Color 2: <input type="text" class="color num2"></input><br>
+					Color 3: <input type="text" class="color num3"></input>
+					Color 4: <input type="text" class="color num4"></input><br>
+					Color 5: <input type="text" class="color num5"></input>
+					Color 6: <input type="text" class="color num6"></input><br>
+					Color 7: <input type="text" class="color num7"></input>
+					Color 8: <input type="text" class="color num8"></input><br>
+					Color 9: <input type="text" class="color num9"></input>
+					Color 0: <input type="text" class="color num0"></input><br><br>
+					Pixel Width: <input type="text" value="2"class="pixWidth"></input>
+					Pixel Height: <input type="text" value="2"class="pixHeight"></input></p>
 				</div>
 			</div>
 			<div id="grid"><div id="reloadButton"><button class="restart">do it again</button><button class="saveImage">convert to png</button></div><canvas id="colorCanvas"></canvas><div class="imageSave"></div></div>

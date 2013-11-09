@@ -105,7 +105,7 @@ $('.myNum').click(function() {
 	var fileName = $(this).val();
 	cellHeight = pH;
 	cellWidth = pW;
-	$('#inputDiv').hide();
+	$('.container').hide();
 	var response = $('.inputNum').val()
 	digits = response.toString().split('');
 	drawNumber(digits);
