@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<title>Colors</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -20,9 +21,7 @@ ga('send', 'pageview');
 		<div id="logoDiv"><canvas id='logoCanvas'></canvas><br>
 			<center><p>Convert a number to an image</p></center></div>
 			<div id="inputDiv">
-				<button class='numButton but' value="pi">PI</button><button class='numButton but' value="phi">PHI</button><br><br>
-				<textarea class="inputNum" cols="50"></textarea><br><br>
-				<button class="myNum but">my own number</button><button class="randomCol but">random colors</button><br><br>
+				COLORS
 				<p>Color 1: <input type="text" class="color num1"></input>
 					Color 2: <input type="text" class="color num2"></input><br>
 					Color 3: <input type="text" class="color num3"></input>
@@ -33,11 +32,17 @@ ga('send', 'pageview');
 					Color 8: <input type="text" class="color num8"></input><br>
 					Color 9: <input type="text" class="color num9"></input>
 					Color 0: <input type="text" class="color num0"></input><br><br>
+					<button class="randomCol but">random colors</button><br><br>
 					Pixel Width: <input type="text" value="2"class="pixWidth"></input>
 					Pixel Height: <input type="text" value="2"class="pixHeight"></input></p>
-				</div>
+					NUMBERS<br>
+				<button class='numButton but2' value="pi">PI</button><button class='numButton but2' value="phi">PHI</button><br><br>
+				<textarea class="inputNum" cols="50">My own number!</textarea><br>
+				<button class="myNum but">Go!</button><br><br>
+
 			</div>
-			<div id="grid"><div id="reloadButton"><button class="restart">do it again</button><button class="saveImage">convert to png</button></div><canvas id="colorCanvas"></canvas><div class="imageSave"></div></div>
+		</div>
+			<div id="grid"><div id="reloadButton"><button class="restart">do it again</button><button class="saveImage">convert to png</button><div class="menubar">HÄR ser man kanke vilka färger man har valt och möjlighet att ändra dom, sen kan man också se vilket nummer man har och ändra det</div></div><canvas id="colorCanvas"></canvas><div class="imageSave"></div></div>
 		</body>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="jscolor.js" type="text/javascript"></script>
