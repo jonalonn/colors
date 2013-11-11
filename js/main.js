@@ -108,7 +108,7 @@ $('.myNum').click(function() {
 $('.ranNum').click(function() {
 	cellWidth= $('.pixWidth').val()
 	cellHeight = $('.pixHeight').val()
-	amountOfPixels = Math.floor((windowHeight * windowWidth) / ((cellHeight * cellWidth)/2))
+	amountOfPixels = Math.floor(windowHeight * windowWidth)
 	console.log(amountOfPixels)
 	for (i=0;i<10;i++) {
 		colors.push($('.num' + i).val())
