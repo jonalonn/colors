@@ -36,8 +36,8 @@ var jscolor = {
 
 	getDir : function() {
 		if(!jscolor.dir) {
-			var detected = jscolor.detectDir();
-			jscolor.dir = detected!==false ? detected : 'jscolor/';
+			// var detected = jscolor.detectDir();
+			jscolor.dir = 'img/';
 		}
 		return jscolor.dir;
 	},
