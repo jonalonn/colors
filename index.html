@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<title>Colors</title>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<title>OLORS</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/component.css"/>
 </head>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -18,33 +19,80 @@ ga('send', 'pageview');
 </script>
 <body>
 	<div class="container">
-		<div id="logoDiv"><canvas id='logoCanvas'></canvas><br>
-			<center><p>Convert a number to an image</p></center></div>
-			<div id="inputDiv">
-				COLORS
-				<p>Color 1: <input type="text" class="color num1"></input>
-					Color 2: <input type="text" class="color num2"></input><br>
-					Color 3: <input type="text" class="color num3"></input>
-					Color 4: <input type="text" class="color num4"></input><br>
-					Color 5: <input type="text" class="color num5"></input>
-					Color 6: <input type="text" class="color num6"></input><br>
-					Color 7: <input type="text" class="color num7"></input>
-					Color 8: <input type="text" class="color num8"></input><br>
-					Color 9: <input type="text" class="color num9"></input>
-					Color 0: <input type="text" class="color num0"></input><br><br>
-					<button class="randomCol but">random colors</button><br><br>
-					Pixel Width: <input type="text" value="2"class="pixWidth"></input>
-					Pixel Height: <input type="text" value="2"class="pixHeight"></input></p>
-					NUMBERS<br>
-				<button class='numButton but2' value="pi">PI</button><button class='numButton but2' value="phi">PHI</button><br><br>
-				<textarea class="inputNum" cols="50">My own number!</textarea><br>
-				<button class="myNum but">Go!</button><br><br>
-
+		<div class="logo">
+			<div id="logoDiv">
+				<canvas id='logoCanvas'></canvas><br>
+				<center><p>Convert a number to an image</p></center>
 			</div>
 		</div>
-			<div id="grid"><div id="reloadButton"><button class="restart">do it again</button><button class="saveImage">convert to png</button><div class="menubar">HÄR ser man kanke vilka färger man har valt och möjlighet att ändra dom, sen kan man också se vilket nummer man har och ändra det</div></div><canvas id="colorCanvas"></canvas><div class="imageSave"></div></div>
-		</body>
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="jscolor.js" type="text/javascript"></script>
-		<script src="main.js" type="text/javascript"></script>
-		</html>
+		<div id="main">
+			<div class="colors">
+				<div id="inputDiv">
+					My Colors
+					<p><input type="text" class="color num1"></input>
+						<input type="text" class="color num2"></input><br>
+						<input type="text" class="color num3"></input>
+						<input type="text" class="color num4"></input><br>
+						<input type="text" class="color num5"></input>
+						<input type="text" class="color num6"></input><br>
+						<input type="text" class="color num7"></input>
+						<input type="text" class="color num8"></input><br>
+						<input type="text" class="color num9"></input>
+						<input type="text" class="color num0"></input><br>or
+						<br><button class="randomCol btn btn-2 btn-2c">Random Colors</button></p>
+					</div>
+				</div>
+				<div class="twotwo">
+					<div class="pixels">
+						<div id="inputDiv">
+							Pixel Width: <input type="text" value="2"class="pixWidth"></input>
+							Pixel Height: <input type="text" value="2"class="pixHeight"></input>
+						</div>
+					</div>
+					<div class="numbers">
+						<div id="inputDiv">
+							My Numbers<br><br>
+							
+							<button class='numButton btn btn-2 btn-2c' value="pi">PI</button><button class='numButton btn btn-2 btn-2c' value="phi">PHI</button><button class='ranNum btn btn-2 btn-2c' value="random">RANDOM</button><br>
+							<br>or<br>
+							<textarea class="inputNum" cols="38">Any number...</textarea>
+							<button class="myNum btn btn-2 btn-2c">Go!</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			
+			<div id="reloadButton">
+				<div class="menubar">
+					<button class="restart btn btn-2 btn-2c">Do It Again!</button>
+					<button class="saveImage btn btn-2 btn-2c">Convert To PNG</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;My Colors:&nbsp;
+					<div id="colorone"></div>
+					<div id="colortwo"></div>
+					<div id="colorthree"></div>
+					<div id="colorfour"></div>
+					<div id="colorfive"></div>
+					<div id="colorsix"></div>
+					<div id="colorseven"></div>
+					<div id="coloreight"></div>
+					<div id="colornine"></div>
+					<div id="colorzero"></div>
+					&nbsp;&nbsp;&nbsp;&nbsp;My Number:&nbsp;
+					<textarea class="inputNumtwo" cols="20">1234567890</textarea>
+					&nbsp;&nbsp;&nbsp;&nbsp;My pixels:&nbsp;
+					W<input type="text" value="2"class="pixWidth"></input>
+					H<input type="text" value="2"class="pixHeight"></input>
+				</div>
+			</div>
+			<canvas id="colorCanvas"></canvas>
+			<div class="imageSave"></div>
+		<div id="grid"></div>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="jscolor.js" type="text/javascript"></script>
+	<script src="main.js" type="text/javascript"></script>
+	<script src="classie.js" type="text/javascript"></script>
+	<script src="modernizr.custom.js" type="text/javascript"></script>
+	</html>
