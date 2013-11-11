@@ -87,11 +87,9 @@ $('.numButton').click(function() {
 		colors.push($('.num' + i).val())
 	}
 	console.log("clickcolor" + colors)
-	var pW = $('.pixWidth').val()
-	var pH = $('.pixHeight').val()
+	cellWidth= $('.pixWidth').val()
+	cellHeight = $('.pixHeight').val()
 	var fileName = $(this).val();
-	cellHeight = pH;
-	cellWidth = pW;
 	$('.container').hide();
 	getFile(fileName);
 })
@@ -100,16 +98,33 @@ $('.myNum').click(function() {
 	for (i=0;i<10;i++) {
 		colors.push($('.num' + i).val())
 	}
-	var pW = $('.pixWidth').val()
-	var pH = $('.pixHeight').val()
-	var fileName = $(this).val();
-	cellHeight = pH;
-	cellWidth = pW;
+	
 	$('.container').hide();
 	var response = $('.inputNum').val()
 	digits = response.toString().split('');
 	drawNumber(digits);
 })
+
+$('.ranNum').click(function() {
+	cellWidth= $('.pixWidth').val()
+	cellHeight = $('.pixHeight').val()
+	amountOfPixels = Math.floor((windowHeight * windowWidth) / ((cellHeight * cellWidth)/2))
+	console.log(amountOfPixels)
+	for (i=0;i<10;i++) {
+		colors.push($('.num' + i).val())
+	}
+	
+	$('.container').hide();
+	for (i=0;i<amountOfPixels;i++) {
+		var ranNum = Math.floor(Math.random() * 9)
+		digits.push(ranNum)
+	}
+	console.log(digits)
+	// var response = $('.inputNum').val()
+	// digits = response.toString().split('');
+	drawNumber(digits);
+})
+
 
 $('.saveImage').click(function() {
 	$('#colorCanvas').hide();
