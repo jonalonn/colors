@@ -11,7 +11,7 @@ body {
 	margin: 0;
 	background-color: rgba(0,200,251,0.3);
 	font-family: myFont;
-	overflow: auto;
+	overflow: hidden;
 }
 
 img {
@@ -63,6 +63,7 @@ img {
 	margin-right: auto !important;
 	margin-top: 10px;
 	color: black;
+	height: auto;
 }
 
 
