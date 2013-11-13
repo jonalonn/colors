@@ -22,6 +22,12 @@ var logoArray = {
 	logoCanvas.width = 340;
 	logoCanvas.height = 50;
 
+// window.addEventListener("resize", function() {
+//    colorCanvas.width = window.innerWidth;
+//    colorCanvas.height = window.innerHeight;
+//    drawNumber(digits);
+// });
+
 //Functions
 
 function randomColor() {
@@ -42,6 +48,15 @@ function drawLogo() {
 		ctx.fillStyle= rC
 		ctx.fillRect(logoArray.x[i],logoArray.y[i], logoWidth, logoHeight);
 	}
+}
+
+function getFile(fileName) {
+	var request = new XMLHttpRequest();
+	request.open("GET", fileName + '.txt', false);
+	request.send(null);
+	var response = request.responseText;
+	digits = response.toString().split('');
+	drawNumber(digits);
 }
 
 function drawNumber(digits) {
@@ -68,6 +83,54 @@ $('#reloadButton').hide();
 $('.restart').click(function() {
 	location.reload();
 })
+// $('.numButton').click(function() {
+// 	for (i=0;i<10;i++) {
+// 		colors.push($('.num' + i).val())
+// 		console.log(colors)
+// 		$('#color' + i).css('background-color', '#' + colors[i])
+// 	}
+// 	console.log("clickcolor" + colors)
+// 	cellWidth= $('.pixWidth').val()
+// 	cellHeight = $('.pixHeight').val()
+// 	var fileName = $(this).val();
+// 	$('.container').hide();
+// 	getFile(fileName);
+// })
+
+// $('.myNum').click(function() {
+// 	cellWidth = $('.pixWidth').val()
+// 	cellHeight = $('.pixHeight').val()
+// 	for (i=0;i<10;i++) {
+// 		colors.push($('.num' + i).val())
+// 		$('#color' + i).css('background-color', '#' + colors[i])
+// 	}
+// 	$('.container').hide();
+// 	response = $('.inputNum').val()
+// 	response.toString;
+// 	repeat = (Math.floor(amountOfPixels/response.length))
+// 	for (i=0;i<repeat;i++) {
+// 		digitsMul.push(response);
+// 	}
+// 	digits = digitsMul.toString().split('');
+// 	drawNumber(digits);
+// })
+
+// $('.ranNum').click(function() {
+// 	cellWidth = $('.pixWidth').val()
+// 	cellHeight = $('.pixHeight').val()
+// 	for (i=0;i<10;i++) {
+// 		colors.push($('.num' + i).val())
+// 		$('#color' + i).css('background-color', '#' + colors[i])
+// 	}
+
+// 	$('.container').hide();
+// 	for (i=0;i<amountOfPixels;i++) {
+// 		var ranNum = Math.floor(Math.random() * 10)
+// 		digits.push(ranNum)
+// 	}
+// 	drawNumber(digits);
+// })
+
 
 $('.saveImage').click(function() {
 	$('#colorCanvas').hide();
@@ -80,21 +143,17 @@ $('.randomCol').click(function() {
 })
 
 $('#numButton1, #numButton2, #myNum, #ranNum').click(function () {
-	console.log(this.id)
-
 	cellWidth = $('.pixWidth').val()
 	cellHeight = $('.pixHeight').val()
-	$('#showW').val(cellWidth)
-	$('#showH').val(cellHeight)
 	for (i=0;i<10;i++) {
 		colors.push($('.num' + i).val())
 		$('#color' + i).css('background-color', '#' + colors[i])
 	}
 	$('.container').hide();
 
-	if (this.id == 'numButton1' || this.id == 'numButton2') {
+	if (this.id == 'numButton1' && 'numButton2') {
 		var fileName = $(this).val();
-		$('.inputNumtwo').val(fileName)
+		getFile(fileName);
 		var request = new XMLHttpRequest();
 		request.open("GET", fileName + '.txt', false);
 		request.send(null);
@@ -104,7 +163,6 @@ $('#numButton1, #numButton2, #myNum, #ranNum').click(function () {
 
 	else if (this.id == 'myNum') {
 		response = $('.inputNum').val()
-		$('.inputNumtwo').val(response)
 		response.toString;
 		repeat = (Math.floor(amountOfPixels/response.length))
 		for (i=0;i<repeat;i++) {
@@ -115,7 +173,6 @@ $('#numButton1, #numButton2, #myNum, #ranNum').click(function () {
 
 	else if (this.id == 'ranNum') {
 		for (i=0;i<amountOfPixels;i++) {
-			$('.inputNumtwo').val("Random")
 			var ranNum = Math.floor(Math.random() * 10)
 			digits.push(ranNum)
 		}

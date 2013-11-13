@@ -131,6 +131,10 @@ img {
 	box-shadow: 3px 4px 4px rgba(60,60,60,0.4);
 }
 
+.crap {
+	visibility: hidden;
+}
+
 #reloadButton {
 	width: auto;
 	display: table;
@@ -140,8 +144,8 @@ img {
 	margin-bottom: 10px;
 }
 
-#colorone {
-	background-color: transparent; 
+#color1 {
+	background-color: #FFFFFF; 
 	width: 10px;
 	height: 10px;
 	border: 1px solid black;
@@ -150,7 +154,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colortwo {
+#color2 {
 	background-color: gray; 
 	width: 10px;
 	height: 10px;
@@ -160,7 +164,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colorthree {
+#color3 {
 	background-color: black; 
 	width: 10px;
 	height: 10px;
@@ -170,7 +174,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colorfour {
+#color4 {
 	background-color: green; 
 	width: 10px;
 	height: 10px;
@@ -180,7 +184,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colorfive {
+#color5 {
 	background-color: orange; 
 	width: 10px;
 	height: 10px;
@@ -190,7 +194,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colorsix {
+#color6 {
 	background-color: blue; 
 	width: 10px;
 	height: 10px;
@@ -200,7 +204,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colorseven {
+#color7 {
 	background-color: yellow; 
 	width: 10px;
 	height: 10px;
@@ -210,7 +214,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#coloreight {
+#color8 {
 	background-color: red; 
 	width: 10px;
 	height: 10px;
@@ -220,7 +224,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colornine {
+#color9 {
 	background-color: purple; 
 	width: 10px;
 	height: 10px;
@@ -230,7 +234,7 @@ img {
 	display: inline-block;
 	border-radius: 2px;
 }
-#colorzero {
+#color0 {
 	background-color: white; 
 	width: 10px;
 	height: 10px;

@@ -29,17 +29,29 @@ ga('send', 'pageview');
 			<div class="colors">
 				<div id="inputDiv">
 					My Colors
-					<p><input type="text" class="color num1"></input>
-						<input type="text" class="color num2"></input><br>
-						<input type="text" class="color num3"></input>
-						<input type="text" class="color num4"></input><br>
-						<input type="text" class="color num5"></input>
-						<input type="text" class="color num6"></input><br>
-						<input type="text" class="color num7"></input>
-						<input type="text" class="color num8"></input><br>
-						<input type="text" class="color num9"></input>
-						<input type="text" class="color num0"></input><br>or
+					<p>	<input type="text" class="color <!-- {valueElement:'myColor1'} --> num1"></input>
+						<input type="text" class="color <!-- {valueElement:'myColor2'} --> num2"></input><br>
+						<input type="text" class="color <!-- {valueElement:'myColor3'} --> num3"></input>
+						<input type="text" class="color <!-- {valueElement:'myColor4'} --> num4"></input><br>
+						<input type="text" class="color <!-- {valueElement:'myColor5'} --> num5"></input>
+						<input type="text" class="color <!-- {valueElement:'myColor6'} --> num6"></input><br>
+						<input type="text" class="color <!-- {valueElement:'myColor7'} --> num7"></input>
+						<input type="text" class="color <!-- {valueElement:'myColor8'} --> num8"></input><br>
+						<input type="text" class="color <!-- {valueElement:'myColor9'} --> num9"></input>
+						<input type="text" class="color <!-- {valueElement:'myColor0'} --> num0"></input><br>or
 						<br><button class="randomCol btn btn-2 btn-2c">Random Colors</button></p>
+						<!-- <div id="colorInput" style='visibility:hidden;'>
+						<input id="myColor1">
+						<input id="myColor2">
+						<input id="myColor3">
+						<input id="myColor4">
+						<input id="myColor5">
+						<input id="myColor6">
+						<input id="myColor7">
+						<input id="myColor8">
+						<input id="myColor9">
+						<input id="myColor0">
+						</div> -->
 					</div>
 				</div>
 				<div class="twotwo">
@@ -53,10 +65,10 @@ ga('send', 'pageview');
 						<div id="inputDiv">
 							My Numbers<br><br>
 							
-							<button class='numButton btn btn-2 btn-2c' value="pi">PI</button><button class='numButton btn btn-2 btn-2c' value="phi">PHI</button><button class='ranNum btn btn-2 btn-2c' value="random">RANDOM</button><br>
+							<button id='numButton1' class='btn btn-2 btn-2c' value="pi">PI</button><button id='numButton2' class='btn btn-2 btn-2c' value="phi">PHI</button><button id ='ranNum' class='btn btn-2 btn-2c' value="random">RANDOM</button><br>
 							<br>or<br>
 							<textarea class="inputNum" cols="38">Any number...</textarea>
-							<button class="myNum btn btn-2 btn-2c">Go!</button>
+							<button id='myNum' class="btn btn-2 btn-2c">Go!</button>
 						</div>
 					</div>
 				</div>
@@ -69,21 +81,21 @@ ga('send', 'pageview');
 					<button class="restart btn btn-2 btn-2c">Do It Again!</button>
 					<button class="saveImage btn btn-2 btn-2c">Convert To PNG</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;My Colors:&nbsp;
-					<div id="colorone"></div>
-					<div id="colortwo"></div>
-					<div id="colorthree"></div>
-					<div id="colorfour"></div>
-					<div id="colorfive"></div>
-					<div id="colorsix"></div>
-					<div id="colorseven"></div>
-					<div id="coloreight"></div>
-					<div id="colornine"></div>
-					<div id="colorzero"></div>
+					<div id="color1"></div>
+					<div id="color2"></div>
+					<div id="color3"></div>
+					<div id="color4"></div>
+					<div id="color5"></div>
+					<div id="color6"></div>
+					<div id="color7"></div>
+					<div id="color8"></div>
+					<div id="color9"></div>
+					<div id="color0"></div>
 					&nbsp;&nbsp;&nbsp;&nbsp;My Number:&nbsp;
 					<textarea class="inputNumtwo" cols="20">1234567890</textarea>
 					&nbsp;&nbsp;&nbsp;&nbsp;My pixels:&nbsp;
-					W<input type="text" value="2"class="pixWidth"></input>
-					H<input type="text" value="2"class="pixHeight"></input>
+					W<input type="text" value="2" id="showW" class="pixWidth"></input>
+					H<input type="text" value="2" id="showH" class="pixHeight"></input>
 				</div>
 			</div>
 			<canvas id="colorCanvas"></canvas>
