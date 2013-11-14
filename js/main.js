@@ -13,6 +13,7 @@ var rowEnd = windowWidth;
 var amountOfPixels = Math.floor(windowHeight * windowWidth)
 var digits = []
 var digitsMul = []
+var j = 0;
 var int=self.setInterval(function(){drawLogo()},250);
 var logoArray = {
 	x: [10, 20, 30, 0, 40, 0, 40, 0, 10, 20, 30, 70, 80, 90, 60, 100, 60, 100, 60, 100, 70, 80, 90, 120, 120, 120, 120, 120, 130, 140, 150, 180, 190, 200, 170, 210, 170, 210, 170, 210, 180, 190, 200, 230, 240, 250, 260, 230, 270, 230, 240, 250, 260, 230, 270, 230, 270, 300, 310, 320, 330, 290, 300, 310, 320, 330, 290, 300, 310, 320],
@@ -21,10 +22,7 @@ var logoArray = {
 	colorCanvas.height = windowHeight;
 	logoCanvas.width = 340;
 	logoCanvas.height = 50;
-// for (i=0;i<10;i++) {
-	
-// 	var myPicker+i = new jscolor.color(document.getElementById('myColor' + i), {})
-// }
+
 var myPicker1 = new jscolor.color(document.getElementById('myColor1'), {})
 var myPicker2 = new jscolor.color(document.getElementById('myColor2'), {})
 var myPicker3 = new jscolor.color(document.getElementById('myColor3'), {})
@@ -36,7 +34,7 @@ var myPicker8 = new jscolor.color(document.getElementById('myColor8'), {})
 var myPicker9 = new jscolor.color(document.getElementById('myColor9'), {})
 var myPicker0 = new jscolor.color(document.getElementById('myColor0'), {})
 
-var myPickers = [myPicker1,myPicker2,myPicker3,myPicker4,myPicker5,myPicker6,myPicker7,myPicker8,myPicker9,myPicker0]
+var myPickers = [myPicker0,myPicker1,myPicker2,myPicker3,myPicker4,myPicker5,myPicker6,myPicker7,myPicker8,myPicker9]
 
 //Functions
 
@@ -45,6 +43,8 @@ function randomColor() {
 		var rC = Math.floor(Math.random()*16777215).toString(16);
 		colors[i] = rC
 		myPickers[i].fromString(rC)
+		$('.color' + i).css('background-color', '#' + rC)
+
 	}
 	colors=[]
 }
@@ -79,8 +79,22 @@ function drawNumber(digits) {
 }
 
 //Buttons
+$('.colorBox').click(function() {
+	console.log(this.id)
+	var tempNumber = this.id.replace(/\D+/, '');
+	myPickers[tempNumber].showPicker();
+	console.log(jscolor.picker.owner);
+})
 
+$('body').click(function() {
+	for (i=0;i<10;i++) {
+	var divColor = $('#myColor' + i).val();
+	$('.color' + i).css('background-color', '#' + divColor)
+	// myPickers[i].hidePicker();
+	}
+})
 $('#reloadButton').hide();
+$('#hiddenNumbers').hide();
 $('.restart').click(function() {
 	location.reload();
 })
@@ -104,7 +118,7 @@ $('#numButton1, #numButton2, #myNum, #ranNum').click(function () {
 	$('#showH').val(cellHeight)
 	for (i=0;i<10;i++) {
 		colors.push($('.num' + i).val())
-		$('#color' + i).css('background-color', '#' + colors[i])
+		// $('#color' + i).css('background-color', '#' + colors[i])
 	}
 	$('.container').hide();
 

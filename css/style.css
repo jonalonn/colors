@@ -132,7 +132,7 @@ img {
 	box-shadow: 3px 4px 4px rgba(60,60,60,0.4);
 }
 
-.crap {
+.hidden {
 	visibility: hidden;
 }
 
@@ -145,105 +145,53 @@ img {
 	margin-bottom: 10px;
 }
 
-#color1 {
-	background-color: #FFFFFF; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
+.colorBox {
+	width: 22px;
+	height: 22px;
 	margin-top: 10px;
-	margin-right: 1px;
+	margin-right: 0px;
 	display: inline-block;
+	border: 1px solid black;	
 	border-radius: 2px;
 }
-#color2 {
-	background-color: gray; 
+
+.smallBox {
 	width: 10px;
 	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
 	display: inline-block;
+	border: 1px solid black;	
 	border-radius: 2px;
 }
-#color3 {
-	background-color: black; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+
+.color1 {
+	background-color: #FFFFFF;
 }
-#color4 {
-	background-color: green; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+.color2 {
+	background-color: #FFFFFF;
 }
-#color5 {
-	background-color: orange; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+.color3 {
+	background-color: #FFFFFF;
 }
-#color6 {
-	background-color: blue; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+.color4 {
+	background-color: #FFFFFF;
 }
-#color7 {
-	background-color: yellow; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+.color5 {
+	background-color: #FFFFFF;
 }
-#color8 {
-	background-color: red; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+.color6 {
+	background-color: #FFFFFF;
 }
-#color9 {
-	background-color: purple; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+.color7 {
+	background-color: #FFFFFF;
 }
-#color0 {
-	background-color: white; 
-	width: 10px;
-	height: 10px;
-	border: 1px solid black;
-	margin-top: 10px;
-	margin-right: 1px;
-	display: inline-block;
-	border-radius: 2px;
+.color8 {
+	background-color: #FFFFFF;
+}
+.color9 {
+	background-color: #FFFFFF;
+}
+.color0 {
+	background-color: #FFFFFF;
 }
 
 
