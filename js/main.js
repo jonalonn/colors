@@ -5,8 +5,8 @@ var topMargin = 0;
 var colors = []
 var cellHeight = 2;
 var cellWidth = 2;
-var logoHeight = 5;
-var logoWidth = 5;
+var logoHeight = 4;
+var logoWidth = 4;
 var windowHeight = window.innerHeight;
 var windowWidth = window.innerWidth;
 var rowEnd = windowWidth;
@@ -21,6 +21,22 @@ var logoArray = {
 	colorCanvas.height = windowHeight;
 	logoCanvas.width = 340;
 	logoCanvas.height = 50;
+// for (i=0;i<10;i++) {
+	
+// 	var myPicker+i = new jscolor.color(document.getElementById('myColor' + i), {})
+// }
+var myPicker1 = new jscolor.color(document.getElementById('myColor1'), {})
+var myPicker2 = new jscolor.color(document.getElementById('myColor2'), {})
+var myPicker3 = new jscolor.color(document.getElementById('myColor3'), {})
+var myPicker4 = new jscolor.color(document.getElementById('myColor4'), {})
+var myPicker5 = new jscolor.color(document.getElementById('myColor5'), {})
+var myPicker6 = new jscolor.color(document.getElementById('myColor6'), {})
+var myPicker7 = new jscolor.color(document.getElementById('myColor7'), {})
+var myPicker8 = new jscolor.color(document.getElementById('myColor8'), {})
+var myPicker9 = new jscolor.color(document.getElementById('myColor9'), {})
+var myPicker0 = new jscolor.color(document.getElementById('myColor0'), {})
+
+var myPickers = [myPicker1,myPicker2,myPicker3,myPicker4,myPicker5,myPicker6,myPicker7,myPicker8,myPicker9,myPicker0]
 
 //Functions
 
@@ -28,7 +44,7 @@ function randomColor() {
 	for (i=0;i<10;i++) {
 		var rC = Math.floor(Math.random()*16777215).toString(16);
 		colors[i] = rC
-		$('.num' + i).val(rC)
+		myPickers[i].fromString(rC)
 	}
 	colors=[]
 }
