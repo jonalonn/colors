@@ -44,6 +44,7 @@ img {
 
 #inputSize {
 	width:300px;
+	margin-top: 7%;
 	margin-left:auto;
 	margin-right: auto;
 	/*display: inline-block;*/
@@ -75,7 +76,7 @@ img {
 
 .logo {
 	width: 340px;
-	background-color: rgba(255,255,255,0.6) !important;
+	background-color: rgba(255,255,255,0.3) !important;
 	margin-left: auto !important;
 	/*height: 514px;*/
 	margin-right: auto !important;
@@ -84,7 +85,7 @@ img {
 	border-radius: 4px;
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
-	box-shadow: 4px 4px 4px rgba(60,60,60,0.4);
+	box-shadow: 4px 4px 4px rgba(60,60,60,0.3);
 }
 
 .container {
@@ -101,10 +102,11 @@ img {
 .colors {
 	width: 340px !important;
 	/*height: 200px;*/
+	height: 75px;
 	margin-bottom: 10px;
 	margin-left: auto !important;
 	margin-right: auto !important;
-	background-color: rgba(255,255,255,0.6) !important;
+	background-color: rgba(255,255,255,0.3) !important;
 	color: #000000;
 	border-radius: 4px;
 	padding: 10px 10px 10px 10px;
@@ -125,60 +127,80 @@ img {
 .pixels {
 	/*height: 10%;*/
 	width: 340px;
-	background-color: rgba(255,255,255,0.6) !important;
+	height: 75px;
+	background-color: rgba(255,255,255,0.3) !important;
 	color: #000000;
 	margin-bottom: 10px;
 	margin-right: 20px;
 	border-radius: 4px;
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
-	box-shadow: 3px 4px 4px rgba(60,60,60,0.4);
+	box-shadow: 3px 4px 4px rgba(60,60,60,0.3);
 }
 
 .numbers {
 	/*height: 180px;*/
 	width: 340px;
-	background-color: rgba(255,255,255,0.6) !important;
+	height: 75px;
+	background-color: rgba(255,255,255,0.3) !important;
 	color: #000000;
 	border-radius: 4px;
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
-	box-shadow: 3px 4px 4px rgba(60,60,60,0.4);
+	box-shadow: 3px 4px 4px rgba(60,60,60,0.3);
 }
 
 .myNum {
 	/*height: 180px;*/
 	margin-top: 2px;
 	width: 340px;
-	background-color: rgba(255,255,255,0.6) !important;
+	background-color: rgba(255,255,255,0.3) !important;
 	color: #000000;
 	border-radius: 4px;
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
-	box-shadow: 3px 4px 4px rgba(60,60,60,0.4);
+	margin-top: 10px;
+	box-shadow: 3px 4px 4px rgba(60,60,60,0.3);
+
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+       -moz-animation: fadein 2s; /* Firefox */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera */
+            animation: fadein 2s;
 }
 
 .menubar {
-	width: auto !important;
+	position: fixed;
+	width: 340px !important;
+	height: 95px;
 	padding: 5px 5px 10px 5px;
 	margin-right: auto !important; 
-	margin-left: auto !important;
+	margin-left: 10px !important;
 	border-radius: 4px;
 	border: 0px solid gray;
 	margin-top: 10px;
 	font-size: small;
 	color: black;
 	display: inline-block;
-	background-color: rgba(255,255,255,0.5);
-	z-index: 1;
-	box-shadow: 3px 4px 4px rgba(60,60,60,0.4);
+	background-color: rgba(255,255,255,0.7);
+	z-index: 99;
+	box-shadow: 3px 4px 4px rgba(60,60,60,0.3);
 }
 
 .hidden {
 	visibility: hidden;
 }
 
+#colorCanvas {
+	margin-left: auto;
+	margin-right: auto;
+	position: fixed;
+	z-index: 1;
+}
+
 #reloadDiv {
+	position: fixed;
+	background-color: transparent;
 	width: auto;
 	display: table;
 	margin-right: auto !important; 
@@ -311,3 +333,27 @@ input {
 	color: gray!important;
 	text-shadow: 1px #000000;
 }
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
