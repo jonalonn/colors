@@ -2,11 +2,11 @@ var c=document.getElementById("colorCanvas");
 var ctx=c.getContext("2d");
 var leftMargin = 0;
 var topMargin = 0;
-var colors = []
+var colors = ['fff', 'fff', 'fff', 'fff', 'fff', 'fff', 'fff', 'fff', 'fff', 'fff']
 var cellHeight = 2;
 var cellWidth = 2;
-var logoHeight = 4;
-var logoWidth = 4;
+var logoHeight = 6;
+var logoWidth = 6;
 var windowHeight = window.innerHeight;
 var windowWidth = window.innerWidth;
 var rowEnd = windowWidth;
@@ -23,30 +23,17 @@ var logoArray = {
 	logoCanvas.width = 340;
 	logoCanvas.height = 50;
 
-var myPicker1 = new jscolor.color(document.getElementById('myColor1'), {})
-var myPicker2 = new jscolor.color(document.getElementById('myColor2'), {})
-var myPicker3 = new jscolor.color(document.getElementById('myColor3'), {})
-var myPicker4 = new jscolor.color(document.getElementById('myColor4'), {})
-var myPicker5 = new jscolor.color(document.getElementById('myColor5'), {})
-var myPicker6 = new jscolor.color(document.getElementById('myColor6'), {})
-var myPicker7 = new jscolor.color(document.getElementById('myColor7'), {})
-var myPicker8 = new jscolor.color(document.getElementById('myColor8'), {})
-var myPicker9 = new jscolor.color(document.getElementById('myColor9'), {})
-var myPicker0 = new jscolor.color(document.getElementById('myColor0'), {})
-
-var myPickers = [myPicker0,myPicker1,myPicker2,myPicker3,myPicker4,myPicker5,myPicker6,myPicker7,myPicker8,myPicker9]
-
 //Functions
 
 function randomColor() {
+	colors=[]
 	for (i=0;i<10;i++) {
 		var rC = Math.floor(Math.random()*16777215).toString(16);
 		colors[i] = rC
-		myPickers[i].fromString(rC)
 		$('.color' + i).css('background-color', '#' + rC)
+		$('.color' + i).colpickSetColor(rC)
 
 	}
-	colors=[]
 }
 
 function drawLogo() {
@@ -73,28 +60,27 @@ function drawNumber(digits) {
         ctx.fillRect(leftMargin, topMargin, cellWidth, cellHeight);
     }
     clearInterval(int);
-    $('#reloadButton').show();
+    $('#reloadDiv').show();
     $('#logoCanvas').hide();
     img = c.toDataURL("image/png");
 }
 
-//Buttons
-$('.colorBox').click(function() {
-	console.log(this.id)
-	var tempNumber = this.id.replace(/\D+/, '');
-	myPickers[tempNumber].showPicker();
-	console.log(jscolor.picker.owner);
-})
+$('.color-box').colpick({
+	layout:'hex',
+	color:'FFFFFF',
+	onSubmit:function(hsb,hex,rgb,el) {
+		var p = el.id.replace(/\D+/, '');
+		colors[p] = hex
+		$(el).css('background-color', '#'+hex);
+		$('.color' + p).css('background-color', '#'+hex);
+		$('body').css('background-color', '#'+hex);
+		$(el).colpickHide();
 
-$('body').click(function() {
-	for (i=0;i<10;i++) {
-	var divColor = $('#myColor' + i).val();
-	$('.color' + i).css('background-color', '#' + divColor)
-	// myPickers[i].hidePicker();
 	}
 })
-$('#reloadButton').hide();
-$('#hiddenNumbers').hide();
+
+$('#reloadDiv').hide();
+$('#inputNumber').hide();
 $('.restart').click(function() {
 	location.reload();
 })
@@ -109,17 +95,18 @@ $('.randomCol').click(function() {
 	randomColor();
 })
 
-$('#numButton1, #numButton2, #myNum, #ranNum').click(function () {
+$('#mynumButton').click(function() {
+	$('#inputNumber').show();
+})
+
+$('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
 	console.log(this.id)
 
 	cellWidth = $('.pixWidth').val()
 	cellHeight = $('.pixHeight').val()
 	$('#showW').val(cellWidth)
 	$('#showH').val(cellHeight)
-	for (i=0;i<10;i++) {
-		colors.push($('.num' + i).val())
-		// $('#color' + i).css('background-color', '#' + colors[i])
-	}
+	
 	$('.container').hide();
 
 	if (this.id == 'numButton1' || this.id == 'numButton2') {
@@ -132,9 +119,9 @@ $('#numButton1, #numButton2, #myNum, #ranNum').click(function () {
 		digits = response.toString().split('');
 	}
 
-	else if (this.id == 'myNum') {
+	else if (this.id == 'goButton') {
 		response = $('.inputNum').val()
-		$('.inputNumtwo').val(response)
+		// $('.inputNumtwo').val(response)
 		response.toString;
 		repeat = (Math.floor(amountOfPixels/response.length))
 		for (i=0;i<repeat;i++) {
@@ -143,7 +130,7 @@ $('#numButton1, #numButton2, #myNum, #ranNum').click(function () {
 		digits = digitsMul.toString().split('');
 	}
 
-	else if (this.id == 'ranNum') {
+	else if (this.id == 'ranButton') {
 		for (i=0;i<amountOfPixels;i++) {
 			$('.inputNumtwo').val("Random")
 			var ranNum = Math.floor(Math.random() * 10)
