@@ -50,39 +50,40 @@
 			</div>
 			<div class="twotwo">
 				<div class="pixels">
-					
-
 					<div id="inputSize">
-					Pixel Width:<input class="pixWidth"type="range" name="points" min="1" max="200"><br>
-					Pixel Height:<input class="pixHeight"type="range" name="points" min="1" max="200">
+						Pixel Width:<input class="pixWidth" type="range" name="points" min="1" max="200">
+						<div id="showW"></div>
+							Pixel Height:<input class="pixHeight" type="range" name="points" min="1" max="200">
+							<div id="showH"></div>
 						<!-- <input type="text" value="2"class="pixWidth"></input>
-						 <input type="text" value="2"class="pixHeight"></input> -->
+						<input type="text" value="2"class="pixHeight"></input> -->
 					</div>
 				</div>
-				<div class="numbers">
-					<div id="inputDiv">
-						Pick a number<br><br>
-						<button id='numButton1' class='btn btn-2 btn-2c butWidth' value="pi">PI</button>
-						<button id='numButton2' class='btn btn-2 btn-2c butWidth' value="phi">PHI</button>
-						<button id ='ranButton' class='btn btn-2 btn-2c butWidth' value="random">RANDOM</button>
-						<button id ='mynumButton' class='btn btn-2 btn-2c butWidth' value="myNum">ANY</button><br>
+
+					<div class="numbers">
+						<div id="inputDiv">
+							Pick a number<br><br>
+							<button id='numButton1' class='btn btn-2 btn-2c butWidth' value="pi">PI</button>
+							<button id='numButton2' class='btn btn-2 btn-2c butWidth' value="phi">PHI</button>
+							<button id ='ranButton' class='btn btn-2 btn-2c butWidth' value="random">RANDOM</button>
+							<button id ='mynumButton' class='btn btn-2 btn-2c butWidth' value="myNum">ANY</button><br>
+						</div>
+					</div>
+					<div class="myNum">
+						<div id="inputNumber">
+							<textarea class="inputNum" cols="38" placeholder="Any number..."></textarea>
+							<button id="goButton" class="btn btn-2 btn-2c">Go!</button>
+						</div>
 					</div>
 				</div>
-				<div class="myNum">
-					<div id="inputNumber">
-						<textarea class="inputNum" cols="38" placeholder="Any number..."></textarea>
-						<button id="goButton" class="btn btn-2 btn-2c">Go!</button>
-					</div>
-				</div>
-			</div>
 			</div>
 		</div>
 		
 
-	<canvas id="colorCanvas"></canvas>
+		<canvas id="colorCanvas"></canvas>
 		<div id="reloadDiv">
 			<div class="menubar">
-			
+
 				&nbsp;&nbsp;&nbsp;&nbsp;My Colors:&nbsp;
 				<div class="color1 smallBox"></div>
 				<div class="color2 smallBox"></div>
@@ -103,7 +104,7 @@
 				<button class="saveImage btn btn-2 btn-2c">Convert To PNG</button>
 			</div>
 		</div>
-	
+
 		<div class="imageSave"></div>
 	</div>
 </body>

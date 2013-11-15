@@ -337,9 +337,23 @@ img {
 
 .pixWidth, .pixHeight {
 	float: right;
-	width:200px;
+	width: 170px;
 }
 
+.showph {
+	float: right;
+	color: black;
+	font-family: myFont;
+	font-size: 10pt;
+}
+
+.showpw {
+	float: right;
+	color: black;
+	font-family: myFont;
+	font-size: 10pt;
+
+}
 
 @keyframes fadein {
     from { opacity: 0; }
