@@ -14,6 +14,7 @@ var amountOfPixels = Math.floor(windowHeight * windowWidth)
 var digits = []
 var digitsMul = []
 var j = 0;
+var p = 0;
 var int=self.setInterval(function(){drawLogo()},250);
 var logoArray = {
 	x: [10, 20, 30, 0, 40, 0, 40, 0, 10, 20, 30, 70, 80, 90, 60, 100, 60, 100, 60, 100, 70, 80, 90, 120, 120, 120, 120, 120, 130, 140, 150, 180, 190, 200, 170, 210, 170, 210, 170, 210, 180, 190, 200, 230, 240, 250, 260, 230, 270, 230, 240, 250, 260, 230, 270, 230, 270, 300, 310, 320, 330, 290, 300, 310, 320, 330, 290, 300, 310, 320],
@@ -65,16 +66,19 @@ function drawNumber(digits) {
     img = c.toDataURL("image/png");
 }
 
+$('.color-box').click(function(){
+	p = this.id.replace(/\D+/, '');
+	console.log(p) 	
+})
+
 $('.color-box').colpick({
 	layout:'hex',
 	color:'FFFFFF',
-	onSubmit:function(hsb,hex,rgb,el) {
-		var p = el.id.replace(/\D+/, '');
+	submit:0,
+	onChange:function(hsb,hex,rgb,el) {
 		colors[p] = hex
-		$(el).css('background-color', '#'+hex);
 		$('.color' + p).css('background-color', '#'+hex);
 		$('body').css('background-color', '#'+hex);
-		$(el).colpickHide();
 
 	}
 })
