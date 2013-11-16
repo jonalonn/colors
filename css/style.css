@@ -44,10 +44,27 @@ img {
 
 #inputSize {
 	width:300px;
-	margin-top: 7%;
+	margin-top: 6%;
 	margin-left:auto;
 	margin-right: auto;
 	/*display: inline-block;*/
+}
+
+#showW {
+	float: right;	
+	display: inline-block;
+}
+
+#showH {
+	float: right;
+	display: inline-block;
+
+}
+
+.pixWidth, .pixHeight {
+	float: center;
+	width: 170px;
+	margin-left: 10px;
 }
 
 #inputNumber {
@@ -86,6 +103,12 @@ img {
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
 	box-shadow: 4px 4px 4px rgba(60,60,60,0.3);
+
+	   -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+       -moz-animation: fadein 0.3s; /* Firefox */
+        -ms-animation: fadein 0.3s; /* Internet Explorer */
+         -o-animation: fadein 0.3s; /* Opera */
+            animation: fadein 0.3s;
 }
 
 .container {
@@ -96,8 +119,6 @@ img {
 	color: black;
 	/*height: auto;*/
 }
-
-
 
 .colors {
 	width: 340px !important;
@@ -112,6 +133,12 @@ img {
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
 	box-shadow: 3px 4px 4px rgba(60,60,60,0.4);
+
+		   -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+       -moz-animation: fadein 0.3s; /* Firefox */
+        -ms-animation: fadein 0.3s; /* Internet Explorer */
+         -o-animation: fadein 0.3s; /* Opera */
+            animation: fadein 0.3s;
 
 }
 
@@ -136,6 +163,12 @@ img {
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
 	box-shadow: 3px 4px 4px rgba(60,60,60,0.3);
+
+	   -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+       -moz-animation: fadein 0.3s; /* Firefox */
+        -ms-animation: fadein 0.3s; /* Internet Explorer */
+         -o-animation: fadein 0.3s; /* Opera */
+            animation: fadein 0.3s;
 }
 
 .numbers {
@@ -148,6 +181,13 @@ img {
 	padding: 10px 10px 10px 10px;
 	border: 0px solid gray;
 	box-shadow: 3px 4px 4px rgba(60,60,60,0.3);
+
+
+	   -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+       -moz-animation: fadein 0.3s; /* Firefox */
+        -ms-animation: fadein 0.3s; /* Internet Explorer */
+         -o-animation: fadein 0.3s; /* Opera */
+            animation: fadein 0.3s;
 }
 
 .myNum {
@@ -235,7 +275,6 @@ img {
 	border: 1px solid black;
 	background-color: white;
 	border-radius: 2px;
-	transition: background-color 0.4s ease;
 }
 
 .isClicked {
@@ -334,27 +373,6 @@ img {
 	text-shadow: 1px #000000;
 }
 
-
-.pixWidth, .pixHeight {
-	float: right;
-	width: 170px;
-}
-
-.showph {
-	float: right;
-	color: black;
-	font-family: myFont;
-	font-size: 10pt;
-}
-
-.showpw {
-	float: right;
-	color: black;
-	font-family: myFont;
-	font-size: 10pt;
-
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -377,3 +395,56 @@ img {
     from { opacity: 0; }
     to   { opacity: 1; }
 }​
+
+$spinner-color: red !default;
+$spinner-background-color: #eee !default;
+$spinner-stroke: 2px !default;
+$spinner-diameter: 40px !default;
+$spinner-sides: 1 !default;
+
+@mixin spinner(
+  $color: $spinner-color,
+  $background-color: $spinner-background-color,
+  $stroke: $spinner-stroke,
+  $diameter: $spinner-diameter,
+  $sides: $spinner-sides
+) {
+  border: $stroke solid $background-color;
+  font-size: $diameter;
+  width: 1em;
+  height: 1em;
+  border-radius: .5em;
+  @include box-sizing(border-box);
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top-color: $color;
+  @if $sides >= 2 {
+    border-right-color: $color;
+  }
+  @if $sides >= 3 {
+    border-bottom-color: $color;
+  }
+}
+
+.spinner {
+  @include spinner();
+}
+
+@-webkit-keyframes spin {
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+@-moz-keyframes spin {
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+@keyframes spin {
+  to {
+    @include transform(rotate(360deg));
+  }
+}

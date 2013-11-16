@@ -92,13 +92,13 @@ $('.restart').click(function() {
 $( ".pixWidth" ).change(function() {
 	var pixValue = $('.pixWidth').val()
 	$('#showW').empty();
-	$('#showW').append('<p>' + pixValue + '</p>');
+	$('#showW').append(pixValue);
 });
 
 $( ".pixHeight" ).change(function() {
 	var pixValue = $('.pixHeight').val()
 	$('#showH').empty();
-	$('#showH').append('<p>' + pixValue + '</p>');
+	$('#showH').append(pixValue);
 });
 
 $('.saveImage').click(function() {
@@ -112,7 +112,7 @@ $('.randomCol').click(function() {
 })
 
 $('#mynumButton').click(function() {
-	$('#inputNumber').show();
+	$('#inputNumber').fadeIn( "normal" );
 })
 
 $('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
