@@ -89,6 +89,18 @@ $('.restart').click(function() {
 	location.reload();
 })
 
+$( ".pixWidth" ).change(function() {
+	var pixValue = $('.pixWidth').val()
+	$('#showW').empty();
+	$('#showW').append('<p>' + pixValue + '</p>');
+});
+
+$( ".pixHeight" ).change(function() {
+	var pixValue = $('.pixHeight').val()
+	$('#showH').empty();
+	$('#showH').append('<p>' + pixValue + '</p>');
+});
+
 $('.saveImage').click(function() {
 	$('#colorCanvas').hide();
 	$('.imageSave').append('<img src="'+img+'"/>');
