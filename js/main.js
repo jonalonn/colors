@@ -122,7 +122,7 @@ $('.randomCol').click(function() {
 })
 
 $('#mynumButton').click(function() {
-	$('#inputNumber').fadeIn( "normal" );
+	$('#inputNumber').slideDown();
 })
 
 $('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
@@ -130,8 +130,6 @@ $('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
 
 	cellWidth = $('.pixWidth').val()
 	cellHeight = $('.pixHeight').val()
-	$('#showW').val(cellWidth)
-	$('#showH').val(cellHeight)
 	
 	$('.container').hide();
 
