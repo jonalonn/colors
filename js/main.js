@@ -66,6 +66,16 @@ function drawNumber(digits) {
     img = c.toDataURL("image/png");
 }
 
+$(function(){
+    $(".menubar").hover(function(){
+      $(this).find(".overlay").fadeIn();
+    }
+                    ,function(){
+                        $(this).find(".overlay").fadeOut();
+                    }
+                   );        
+})
+
 $('.color-box').click(function(){
 	p = this.id.replace(/\D+/, '');
 	console.log(p) 	
