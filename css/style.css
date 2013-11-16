@@ -42,9 +42,19 @@ img {
 	/*display: inline-block;*/
 }
 
+#menuInfo {
+	width:300px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left:auto;
+	margin-right: auto;
+	/*display: inline-block;*/
+}
+
 #inputSize {
 	width:300px;
-	margin-top: 6%;
+	margin-top: 19px;
+	margin-bottom: 10px;
 	margin-left:auto;
 	margin-right: auto;
 	/*display: inline-block;*/
@@ -148,6 +158,18 @@ img {
 
 }
 
+.restart {
+	width: 95px;
+}
+
+.saveImage {
+	width: 95px;
+}
+
+.hideDiv {
+	width: 95px;
+}
+
 .twotwo {
 	width: 340px;
 	/*height: 200px !important;*/
@@ -219,18 +241,16 @@ img {
 	position: fixed;
 	width: 340px !important;
 	height: 150px;
-	padding: 5px 5px 10px 5px;
 	margin-right: auto !important; 
 	margin-left: 10px !important;
 	border-radius: 4px;
-	border: 0px solid gray;
 	margin-top: 10px;
 	font-size: small;
 	color: black;
-	display: inline-block;
+	padding: 10px 10px 10px 10px;
 	background-color: rgba(255,255,255,0.7);
-	z-index: 99;
 	box-shadow: 3px 4px 4px rgba(60,60,60,0.3);
+	z-index: 99;
 }
 
 .hidden {
