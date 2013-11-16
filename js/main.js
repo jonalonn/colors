@@ -132,6 +132,7 @@ $('#mynumButton').click(function() {
 	}
 })
 
+
 $('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
 	console.log(this.id)
 
