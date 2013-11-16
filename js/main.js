@@ -15,6 +15,7 @@ var digits = []
 var digitsMul = []
 var j = 0;
 var p = 1;
+var clicked = 0;
 var int=self.setInterval(function(){drawLogo()},250);
 var logoArray = {
 	x: [10, 20, 30, 0, 40, 0, 40, 0, 10, 20, 30, 70, 80, 90, 60, 100, 60, 100, 60, 100, 70, 80, 90, 120, 120, 120, 120, 120, 130, 140, 150, 180, 190, 200, 170, 210, 170, 210, 170, 210, 180, 190, 200, 230, 240, 250, 260, 230, 270, 230, 240, 250, 260, 230, 270, 230, 270, 300, 310, 320, 330, 290, 300, 310, 320, 330, 290, 300, 310, 320],
@@ -122,7 +123,13 @@ $('.randomCol').click(function() {
 })
 
 $('#mynumButton').click(function() {
-	$('#inputNumber').slideDown();
+	if (clicked == 0) {
+		$('#inputNumber').slideDown()
+		clicked = 1 }
+	else {
+		$('#inputNumber').slideUp()
+		clicked = 0
+	}
 })
 
 $('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
