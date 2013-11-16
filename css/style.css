@@ -60,12 +60,12 @@ img {
 	/*display: inline-block;*/
 }
 
-#showW {
+.showW {
 	float: right;	
 	display: inline-block;
 }
 
-#showH {
+.showH {
 	float: right;
 	display: inline-block;
 
@@ -240,7 +240,7 @@ img {
 .menubar {
 	position: fixed;
 	width: 340px !important;
-	height: 150px;
+	/*height: 150px;*/
 	margin-right: auto !important; 
 	margin-left: 10px !important;
 	border-radius: 4px;
