@@ -70,10 +70,15 @@ function drawNumber(digits) {
 
 $('.pixWidth').val(1)
 $('.pixHeight').val(1)
+$('#reloadDiv').hide();
+$('#inputNumber').hide();
+$('.pixWidth').attr("max", windowWidth);
+$('.pixHeight').attr("max", windowHeight);
+
+// Buttons
 
 $('.color-box').click(function(){
 	p = this.id.replace(/\D+/, '');
-	console.log(p) 	
 })
 
 $('.color-box').colpick({
@@ -88,8 +93,6 @@ $('.color-box').colpick({
 	}
 })
 
-$('#reloadDiv').hide();
-$('#inputNumber').hide();
 $('.restart').click(function() {
 	location.reload();
 })
@@ -128,15 +131,15 @@ $('#mynumButton').click(function() {
 	}
 })
 
-$('.hideDiv').click(function() {
+$('.hideButton').click(function() {
 	if (hide == 0) {
-		$('.menubar').fadeOut()
+		$('.menubar').fadeOut("slow")
 		hide = 1 }	
 })
 
 $('#colorCanvas').click(function() {
 	if (hide == 1) {
-		$('.menubar').fadeIn(1000)
+		$('.menubar').fadeIn("slow")
 		hide = 0 }
 })
 

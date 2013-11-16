@@ -78,7 +78,7 @@ img {
 
 .pixWidth, .pixHeight {
 	float: center;
-	width: 170px;
+	width: 168px;
 	margin-left: 10px;
 }
 
@@ -166,7 +166,7 @@ img {
 	width: 95px;
 }
 
-.hideDiv {
+.hideButton {
 	width: 95px;
 }
 
