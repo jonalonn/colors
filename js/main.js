@@ -14,7 +14,7 @@ var amountOfPixels = Math.floor(windowHeight * windowWidth)
 var digits = []
 var digitsMul = []
 var j = 0;
-var p = 1;
+var p = 0;
 var clicked = 0;
 var hide = 0;
 var int=self.setInterval(function(){drawLogo()},250);
@@ -35,8 +35,8 @@ function randomColor() {
 		colors[i] = rC
 		$('.color' + i).css('background-color', '#' + rC)
 		$('.color' + i).colpickSetColor(rC)
-
 	}
+	$('input[type=range]').css('background-color', "#" + colors[0]);
 }
 function brightness(hex, percent){
     hex = hex.replace(/^\s*#|\s*$/g, '');
@@ -58,9 +58,10 @@ function randomGradient() {
 		$('.color' + i).css('background-color', colors[i])
 		$('.color' + i).colpickSetColor(colors[i])
 		number = number + 7
-
 	}
+	$('input[type=range]').css('background-color', "#" + colors[0]);
 }
+
 function drawLogo() {
 	var canvas = document.getElementById('logoCanvas');
 	var ctx = canvas.getContext('2d');
@@ -98,6 +99,9 @@ $('.pixWidth').val(1)
 $('.pixHeight').val(1)
 $('.pixWidth').attr("max", windowWidth);
 $('.pixHeight').attr("max", windowHeight);
+randomGradient();
+$('body').css('background-color', colors[9]);
+$('input[type=range]').css('background-color', colors[9]);
 
 // Colorpicker
 
@@ -109,7 +113,10 @@ $('.color-box').colpick({
 		colors[p] = hex
 		$('.color' + p).css('background-color', '#'+hex);
 		$('body').css('background-color', '#'+hex);
-	p=0
+		$('input[type=range]').css('background-color', '#'+hex);
+	},
+	onHide:function(){
+		p=0
 	}
 })
 
