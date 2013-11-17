@@ -88,7 +88,14 @@ img {
 	margin-right: auto;
 	/*display: inline-block;*/
 }
-.randomCol, #goButton {
+.randomCol, .randomGrad {
+	width: 140px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+#goButton {
 	width: 300px;
 	margin-bottom: 10px;
 }
@@ -139,7 +146,7 @@ img {
 .colors {
 	width: 340px !important;
 	/*height: 200px;*/
-	height: 75px;
+	/*height: 75px;*/
 	margin-bottom: 10px;
 	margin-left: auto !important;
 	margin-right: auto !important;

@@ -30,7 +30,7 @@ var logoArray = {
 
 function randomColor() {
 	colors=[]
-	for (i=0;i<10;i++) {
+	for (i=0;i<=9;i++) {
 		var rC = Math.floor(Math.random()*16777215).toString(16);
 		colors[i] = rC
 		$('.color' + i).css('background-color', '#' + rC)
@@ -38,7 +38,35 @@ function randomColor() {
 
 	}
 }
+function increase_brightness(hex, percent){
+    // strip the leading # if it's there
+    hex = hex.replace(/^\s*#|\s*$/g, '');
+    // convert 3 char codes --> 6, e.g. `E0F` --> `EE00FF`
+    if(hex.length == 3){
+        hex = hex.replace(/(.)/g, '$1$1');
+    }
+    var r = parseInt(hex.substr(0, 2), 16),
+        g = parseInt(hex.substr(2, 2), 16),
+        b = parseInt(hex.substr(4, 2), 16);
+    return '#' +
+       ((0|(1<<8) + r + (256 - r) * percent / 100).toString(16)).substr(1) +
+       ((0|(1<<8) + g + (256 - g) * percent / 100).toString(16)).substr(1) +
+       ((0|(1<<8) + b + (256 - b) * percent / 100).toString(16)).substr(1);
+}
 
+function randomGradient() {
+	colors=[]
+	var random = Math.floor(Math.random()*16777215).toString(16);
+	var number = 0
+	for (i=9;i>=0;i--) {
+		colors[i] = increase_brightness(random, number)
+		console.log("steps: " + number + " colorarray: " + colors[i] + " number: " + i)
+		$('.color' + i).css('background-color', colors[i])
+		$('.color' + i).colpickSetColor(colors[i])
+		number = number + 7
+
+	}
+}
 function drawLogo() {
 	var canvas = document.getElementById('logoCanvas');
 	var ctx = canvas.getContext('2d');
@@ -117,9 +145,9 @@ $('.saveImage').click(function() {
 	$('.saveImage').hide();
 })
 
-$('.randomCol').click(function() {
-	randomColor();
-})
+$('.randomCol').click(randomColor);
+
+$('.randomGrad').click(randomGradient);
 
 $('#mynumButton').click(function() {
 	if (clicked == 0) {
