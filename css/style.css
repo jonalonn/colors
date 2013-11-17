@@ -349,7 +349,7 @@ input[type=range] {
 input[type="range"]::-webkit-slider-thumb {
      -webkit-appearance: none;
     background-color: #666;
-    opacity: 0.5;;
+    opacity: 0.7;
     height: 10px;
     width: 5px;
     margin-bottom: 5px
@@ -373,6 +373,7 @@ input[type="range"]::-webkit-slider-thumb {
 	-moz-border-radius-bottomleft:0px;
 	border-bottom-left-radius:0px;
 	text-indent:0px;
+	border-radius: 5px;
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	color:#777777;
@@ -392,7 +393,7 @@ input[type="range"]::-webkit-slider-thumb {
 	top:1px;
 }
 .btn4row {
-	height:30px;
+	height:20px;
 	width:70px;
 	font-size:10px;
 }
