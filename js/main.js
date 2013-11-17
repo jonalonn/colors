@@ -38,13 +38,8 @@ function randomColor() {
 
 	}
 }
-function increase_brightness(hex, percent){
-    // strip the leading # if it's there
+function brightness(hex, percent){
     hex = hex.replace(/^\s*#|\s*$/g, '');
-    // convert 3 char codes --> 6, e.g. `E0F` --> `EE00FF`
-    if(hex.length == 3){
-        hex = hex.replace(/(.)/g, '$1$1');
-    }
     var r = parseInt(hex.substr(0, 2), 16),
         g = parseInt(hex.substr(2, 2), 16),
         b = parseInt(hex.substr(4, 2), 16);
@@ -59,8 +54,7 @@ function randomGradient() {
 	var random = Math.floor(Math.random()*16777215).toString(16);
 	var number = 0
 	for (i=9;i>=0;i--) {
-		colors[i] = increase_brightness(random, number)
-		console.log("steps: " + number + " colorarray: " + colors[i] + " number: " + i)
+		colors[i] = brightness(random, number)
 		$('.color' + i).css('background-color', colors[i])
 		$('.color' + i).colpickSetColor(colors[i])
 		number = number + 7
@@ -96,18 +90,16 @@ function drawNumber(digits) {
     img = c.toDataURL("image/png");
 }
 
-$('.pixWidth').val(1)
-$('.pixHeight').val(1)
+// Initial settings
+
 $('#reloadDiv').hide();
 $('#inputNumber').hide();
+$('.pixWidth').val(1)
+$('.pixHeight').val(1)
 $('.pixWidth').attr("max", windowWidth);
 $('.pixHeight').attr("max", windowHeight);
 
-// Buttons
-
-$('.color-box').click(function(){
-	p = this.id.replace(/\D+/, '');
-})
+// Colorpicker
 
 $('.color-box').colpick({
 	layout:'hex',
@@ -117,8 +109,14 @@ $('.color-box').colpick({
 		colors[p] = hex
 		$('.color' + p).css('background-color', '#'+hex);
 		$('body').css('background-color', '#'+hex);
-
+	p=0
 	}
+})
+
+// Buttons
+
+$('.color-box').click(function(){
+	p = this.id.replace(/\D+/, '');
 })
 
 $('.restart').click(function() {
@@ -172,8 +170,6 @@ $('#colorCanvas').click(function() {
 })
 
 $('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
-	console.log(this.id)
-
 	cellWidth = $('.pixWidth').val()
 	cellHeight = $('.pixHeight').val()
 	
@@ -191,7 +187,6 @@ $('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
 
 	else if (this.id == 'goButton') {
 		response = $('.inputNum').val()
-		// $('.inputNumtwo').val(response)
 		response.toString;
 		repeat = (Math.floor(amountOfPixels/response.length))
 		for (i=0;i<repeat;i++) {
