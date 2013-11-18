@@ -176,13 +176,13 @@ $('#colorCanvas').click(function() {
 		hide = 0 }
 })
 
-$('#numButton1, #numButton2, #goButton, #ranButton').click(function () {
+$('#numButton1, #numButton2, #numButton3, #goButton, #ranButton').click(function () {
 	cellWidth = $('.pixWidth').val()
 	cellHeight = $('.pixHeight').val()
 	
 	$('.container').hide();
 
-	if (this.id == 'numButton1' || this.id == 'numButton2') {
+	if (this.id == 'numButton1' || this.id == 'numButton2' || this.id == 'numButton3') {
 		var fileName = $(this).val();
 		$('.inputNumtwo').val(fileName)
 		var request = new XMLHttpRequest();

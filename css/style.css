@@ -394,13 +394,18 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .btn4row {
 	height:20px;
-	width:70px;
+	width:80px;
 	font-size:10px;
 }
 .btn2row {
 	width: 140px;
 	height: 30px;
 	font-size:15px;
+}
+.btn3row {
+	width:40px;
+	font-size:10px;
+	height: 20px;
 }
 
 @keyframes fadein {
