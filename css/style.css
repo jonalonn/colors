@@ -393,19 +393,19 @@ input[type="range"]::-webkit-slider-thumb {
 	top:1px;
 }
 .btn4row {
-	height:20px;
+	/*height:30px;*/
 	width:80px;
-	font-size:10px;
+	/*font-size:12px;*/
 }
 .btn2row {
 	width: 140px;
-	height: 30px;
-	font-size:15px;
+	/*height: 30px;*/
+	/*font-size:15px;*/
 }
 .btn3row {
 	width:40px;
-	font-size:10px;
-	height: 20px;
+	/*font-size:12px;*/
+	/*height: 30px;*/
 }
 
 @keyframes fadein {
