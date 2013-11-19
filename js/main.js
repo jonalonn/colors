@@ -67,7 +67,7 @@ function drawLogo() {
 	var ctx = canvas.getContext('2d');
 	logoArray.toString
 	for (i=0;i<logoArray.x.length;i++){
-		var rC = Math.floor(Math.random()*16777215).toString(16);
+		var rC = '#'+Math.floor(Math.random()*16777215).toString(16);
 		ctx.fillStyle= rC
 		ctx.fillRect(logoArray.x[i],logoArray.y[i], logoWidth, logoHeight);
 	}
