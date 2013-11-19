@@ -51,7 +51,7 @@ function brightness(hex, percent){
 
 function randomGradient() {
 	colors=[]
-	var random = Math.floor(Math.random()*16777215).toString(16);
+	var random = '#'+Math.floor(Math.random()*16777215).toString(16);
 	var number = 0
 	for (i=9;i>=0;i--) {
 		colors[i] = brightness(random, number)
