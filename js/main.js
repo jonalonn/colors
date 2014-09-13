@@ -7,6 +7,8 @@ var cellHeight = 2;
 var cellWidth = 2;
 var logoHeight = 5;
 var logoWidth = 5;
+var pixHeight = 4;
+var pixWidth = 4;
 var windowHeight = window.innerHeight;
 var windowWidth = window.innerWidth;
 var rowEnd = windowWidth;
@@ -15,6 +17,7 @@ var digits = []
 var digitsMul = []
 var j = 0;
 var p = 0;
+var k = 0;
 var clicked = 0;
 var hide = 0;
 var int=self.setInterval(function(){drawLogo()},250);
@@ -32,21 +35,21 @@ function randomColor() {
 	colors=[]
 	for (i=0;i<=9;i++) {
 		var rC = Math.floor(Math.random()*16777215).toString(16);
-		colors[i] = rC
+		colors[i] = '#'+rC
 		$('.color' + i).css('background-color', '#' + rC)
 		$('.color' + i).colpickSetColor(rC)
 	}
 	$('input[type=range]').css('background-color', "#" + colors[0]);
 }
 function brightness(hex, percent){
-    hex = hex.replace(/^\s*#|\s*$/g, '');
-    var r = parseInt(hex.substr(0, 2), 16),
-        g = parseInt(hex.substr(2, 2), 16),
-        b = parseInt(hex.substr(4, 2), 16);
-    return '#' +
-       ((0|(1<<8) + r + (256 - r) * percent / 100).toString(16)).substr(1) +
-       ((0|(1<<8) + g + (256 - g) * percent / 100).toString(16)).substr(1) +
-       ((0|(1<<8) + b + (256 - b) * percent / 100).toString(16)).substr(1);
+	hex = hex.replace(/^\s*#|\s*$/g, '');
+	var r = parseInt(hex.substr(0, 2), 16),
+	g = parseInt(hex.substr(2, 2), 16),
+	b = parseInt(hex.substr(4, 2), 16);
+	return '#' +
+	((0|(1<<8) + r + (256 - r) * percent / 100).toString(16)).substr(1) +
+	((0|(1<<8) + g + (256 - g) * percent / 100).toString(16)).substr(1) +
+	((0|(1<<8) + b + (256 - b) * percent / 100).toString(16)).substr(1);
 }
 
 function randomGradient() {
@@ -74,20 +77,34 @@ function drawLogo() {
 }
 
 function drawNumber(digits) {
-	for (i=0;i<digits.length;i++) {
+	// inc = 0;
+	console.log(amountOfPixels)
+	// draw(digits, inc);
+	rowEnd = Math.floor(rowEnd/pixWidth);
+	// function drawStuff() {
+	for (k=0;k<amountOfPixels;k++) {
+	// if (k <= digits.length) {
         // Returns what row you are on
         // Example, if you are on #350, then 350 / 128 will be 2.72. We "floor" it to remove the decimal, leaving it at just 2. It will be a value of 2 from #256 all the way to 383
-        var row = Math.floor(i / rowEnd);
+        var row = Math.floor(k / rowEnd);
         // % computes the remainder. So 350 / 128 has a remainder of 94, so we know we are on the 94th column.
-        var col = i % rowEnd;
-        var topMargin = row * cellHeight;
-        var leftMargin = col * cellWidth;
-        ctx.fillStyle=colors[digits[i]];
+        var col = k % rowEnd;
+        var topMargin = row * pixHeight;
+        var leftMargin = col * pixWidth;
+        // console.log('row: '+ row+' column: '+col);
+        ctx.fillStyle=colors[digits[k]];
         ctx.fillRect(leftMargin, topMargin, cellWidth, cellHeight);
-    }
-    clearInterval(int);
-    $('#reloadDiv').show();
-    $('#logoCanvas').hide();
+        // k++;
+        // console.log(digits[k])
+        // requestAnimationFrame(drawStuff);    
+    // } else { 
+    // 	console.log("fail")
+    // }
+}
+// requestAnimationFrame(drawStuff);
+clearInterval(int);
+$('#reloadDiv').show();
+$('#logoCanvas').hide();
     img = c.toDataURL("image/png");
 }
 
@@ -95,10 +112,10 @@ function drawNumber(digits) {
 
 $('#reloadDiv').hide();
 $('#inputNumber').hide();
-$('.pixWidth').val(1)
-$('.pixHeight').val(1)
 $('.pixWidth').attr("max", windowWidth);
 $('.pixHeight').attr("max", windowHeight);
+$('.pixWidth').val(pixWidth);
+$('.pixHeight').val(pixHeight);
 randomGradient();
 $('body').css('background-color', colors[9]);
 $('input[type=range]').css('background-color', colors[9]);
@@ -135,6 +152,7 @@ $( ".pixWidth" ).change(function() {
 	$('.showW').empty();
 	$('.showW').append(pixValue);
 	$('.pixWidth').val(pixValue)
+	pixWidth = pixValue;
 });
 
 $( ".pixHeight" ).change(function() {
@@ -142,6 +160,7 @@ $( ".pixHeight" ).change(function() {
 	$('.showH').empty();
 	$('.showH').append(pixValue);
 	$('.pixHeight').val(pixValue)
+	pixHeight = pixValue;
 });
 
 $('.saveImage').click(function() {
@@ -158,28 +177,29 @@ $('#mynumButton').click(function() {
 	if (clicked == 0) {
 		$('#inputNumber').slideDown()
 		clicked = 1 }
-	else {
-		$('#inputNumber').slideUp()
-		clicked = 0
-	}
-})
+		else {
+			$('#inputNumber').slideUp()
+			clicked = 0
+		}
+	})
 
 $('.hideButton').click(function() {
 	if (hide == 0) {
 		$('.menubar').fadeOut("slow")
 		hide = 1 }	
-})
+	})
 
 $('#colorCanvas').click(function() {
 	if (hide == 1) {
 		$('.menubar').fadeIn("slow")
 		hide = 0 }
-})
+	})
 
 $('#numButton1, #numButton2, #numButton3, #goButton, #ranButton').click(function () {
 	cellWidth = $('.pixWidth').val()
 	cellHeight = $('.pixHeight').val()
-	
+	amountOfPixels = Math.floor(amountOfPixels/(pixWidth*pixHeight));
+
 	$('.container').hide();
 
 	if (this.id == 'numButton1' || this.id == 'numButton2' || this.id == 'numButton3') {
@@ -209,7 +229,7 @@ $('#numButton1, #numButton2, #numButton3, #goButton, #ranButton').click(function
 			digits.push(ranNum)
 		}
 	}
-
+	// console.log(digits);
 	drawNumber(digits);
 
 });

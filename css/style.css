@@ -24,6 +24,11 @@ img {
 	color: black;
 }
 
+#logoDiv p {
+	font-size: 12pt;
+	margin-right: 10px;
+	margin-left: 10px;
+}
 
 #inputDiv {
 	width:300px;
